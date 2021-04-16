@@ -11,8 +11,7 @@
   "plugins": [
     "@typescript-eslint"
   ],
-  "rules": {
-  },
+  "rules": {},
   "overrides": [
     {
       "files": [
@@ -58,12 +57,12 @@
           "off",
           {
             "multiline": {
-            "delimiter": "none",
-            "requireLast": true
+              "delimiter": "none",
+              "requireLast": true
             },
             "singleline": {
-            "delimiter": "semi",
-            "requireLast": false
+              "delimiter": "semi",
+              "requireLast": false
             }
           }
         ],
@@ -89,4 +88,3 @@
     }
   ]
 }
-
