@@ -3,7 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  env: 'dev',
+  name: 'Portfolio',
+  production: false,
+  api: {
+    url: 'api/wp-json/wp',
+    version: 'v2',
+  }
 };
 
 /*
