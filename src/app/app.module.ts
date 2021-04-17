@@ -9,6 +9,18 @@ import { ContactComponent } from './portfolio/contact/contact.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RestInterceptor } from './global/rest-interceptor';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { LabComponent } from './portfolio/lab/lab.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { HeaderComponent } from './portfolio/header/header.component';
+import { FooterComponent } from './portfolio/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +28,28 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     SummaryComponent,
     AboutComponent,
     ContactComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    LabComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatSlideToggleModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
+    BrowserAnimationsModule
   ],
   providers: [
     {

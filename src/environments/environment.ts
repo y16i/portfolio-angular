@@ -7,6 +7,7 @@ export const environment = {
   name: 'Portfolio',
   production: false,
   api: {
+    server: 'https://viep.org',
     url: 'api/wp-json/wp',
     version: 'v2',
   }
