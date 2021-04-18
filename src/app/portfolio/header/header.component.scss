@@ -1,0 +1,36 @@
+.header {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  .child {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 10px 0 0;
+    pf-menu {
+      margin: 0 20px 0 0;
+    }
+    .theme-switcher {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      mat-slide-toggle {
+        margin: 0 5px;
+      }
+      .sun {
+        color: #ffd740;
+        background-color: #4141ff;
+        padding: 2px;
+        border-radius: 6px;
+      }
+      .moon {
+        color: #ffd740;
+        background-color: #000;
+        padding: 2px;
+        border-radius: 6px;
+      }
+    }
+  }
+}

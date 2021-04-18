@@ -13,7 +13,7 @@ export class WordpressApiService extends BaseRestApiService {
     super(http);
   }
   
-  public getPost(slug: string): Observable<any> {
+  public getPage(slug: string): Observable<any> {
     return this.get<any>(`${WordpressApiConstants.getPost}${slug}`);
   }
 }

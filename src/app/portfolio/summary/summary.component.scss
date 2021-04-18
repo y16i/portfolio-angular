@@ -1,6 +1,86 @@
+@import '~@angular/material/theming';
+
 .summary {
-  background-position: center top;
-  background-size: 100% auto;
   height: 100vh;
-  opacity: 0.7;
+  
+  &.dark {
+    background: url('../../../assets/images/dark.jpg') no-repeat;
+    background-position: center top;
+    background-size: 100% auto;
+    opacity: 1;
+    }
+  &.light {
+    background: url('../../../assets/images/light.jpg') no-repeat;
+    background-position: center top;
+    background-size: 100% auto;
+  }
+
+  .blocks {
+    display: flex;
+    flex-direction: row;
+    padding: 23% 0 0 0;
+    .block {
+      max-height: 300px;
+    }
+    .current {
+      width: 45%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      height: 300px;
+      .name {
+        color: mat-color($mat-grey, 400);
+        padding: 0 20px 0 0;
+        font-size: 18px;
+        line-height: 25px;
+      }
+      .category {
+        padding: 0 20px 0 0;
+        color: mat-color($mat-grey, 50);
+        font-size: 42px;
+        line-height: 42px;
+      }
+      hr {
+        height: 1px;
+        width: 100%;
+        border: none;
+        background-color: mat-color($mat-red, 900);
+      }
+      .title {
+        color: mat-color($mat-grey, 300);
+        padding: 0 20px 0 0;
+        font-size: 21px;
+        line-height: 21px;
+      }
+    }
+    h2 {
+      font-size: 23px;
+      color: mat-color($mat-yellow, 500);
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      color: mat-color($mat-grey, 300);
+      font-size: 16px;
+    }
+    .current-focus {
+      width: 27.5%;
+      background-color: rgba(0, 0, 0, 0.6);
+      flex-direction: column;
+      align-items: flex-end;
+      display: flex;
+      padding: 5% 20px 0 0;
+    }
+    .experience {
+      width: 27.5%;
+      background-color: rgba(0, 0, 0, 0.4);
+      flex-direction: column;
+      align-items: flex-start;
+      display: flex;
+      padding: 5% 0 0 20px;
+    }
+  }
 }

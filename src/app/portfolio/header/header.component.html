@@ -1,6 +1,13 @@
-<div class="header" [formGroup]="formGroup">
-  <mat-slide-toggle
-    formControlName="toggle">
-    <mat-icon color="primary">bright</mat-icon>
-  </mat-slide-toggle>
+<div class="header">
+  <div class="child">
+    <pf-menu></pf-menu>
+    <div class="theme-switcher" [formGroup]="formGroup">
+      <span class="material-icons moon" title="Dark mode">dark_mode</span>
+      <mat-slide-toggle
+        formControlName="toggle"
+        color="primary">
+      </mat-slide-toggle>
+      <span class="material-icons sun" title="Light mode">light_mode</span>
+    </div>
+  </div>
 </div>

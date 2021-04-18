@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   private initForm(): void {
     this.formGroup = new FormGroup({
-      toggle: new FormControl(false)
+      toggle: new FormControl(true)
     });
 
     // subscribe

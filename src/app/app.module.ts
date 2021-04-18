@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { SummaryComponent } from './portfolio/summary/summary.component';
 import { AboutComponent } from './portfolio/about/about.component';
 import { ContactComponent } from './portfolio/contact/contact.component';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RestInterceptor } from './global/rest-interceptor';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { LabComponent } from './portfolio/lab/lab.component';
@@ -21,6 +21,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { HeaderComponent } from './portfolio/header/header.component';
 import { FooterComponent } from './portfolio/footer/footer.component';
+import { MenuComponent } from './portfolio/header/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { FooterComponent } from './portfolio/footer/footer.component';
     PortfolioComponent,
     LabComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +45,7 @@ import { FooterComponent } from './portfolio/footer/footer.component';
     MatSlideToggleModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable

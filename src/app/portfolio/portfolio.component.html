@@ -1,6 +1,17 @@
 <pf-header></pf-header>
+
 <pf-summary></pf-summary>
 <pf-about></pf-about>
 <pf-lab></pf-lab>
 <pf-contact></pf-contact>
+
 <pf-footer></pf-footer>
+
+<button
+	mat-fab
+	color="accent"
+	class="back-to-top"
+	[ngClass]="{show: show, hide: !show}"
+	(click)="backToTop()">
+  <span class="material-icons">arrow_upward</span>
+</button>
