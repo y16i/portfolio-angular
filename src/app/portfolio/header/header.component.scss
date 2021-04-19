@@ -24,12 +24,18 @@
         background-color: #4141ff;
         padding: 2px;
         border-radius: 6px;
+        &.off {
+          color: #555;
+        }
       }
       .moon {
         color: #ffd740;
         background-color: #000;
         padding: 2px;
         border-radius: 6px;
+        &.off {
+          color: #555;
+        }
       }
     }
   }

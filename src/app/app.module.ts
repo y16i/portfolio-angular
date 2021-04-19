@@ -22,6 +22,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { HeaderComponent } from './portfolio/header/header.component';
 import { FooterComponent } from './portfolio/footer/footer.component';
 import { MenuComponent } from './portfolio/header/menu/menu.component';
+import { SafeHtmlPipe } from './shared/pipes/safe-html.pipe';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { MenuComponent } from './portfolio/header/menu/menu.component';
     LabComponent,
     HeaderComponent,
     FooterComponent,
-    MenuComponent
+    MenuComponent,
+    SafeHtmlPipe
   ],
   imports: [
     BrowserModule,

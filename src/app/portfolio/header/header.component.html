@@ -2,12 +2,21 @@
   <div class="child">
     <pf-menu></pf-menu>
     <div class="theme-switcher" [formGroup]="formGroup">
-      <span class="material-icons moon" title="Dark mode">dark_mode</span>
+      <span
+        class="material-icons moon"
+        title="Dark mode"
+        [ngClass]="{'on': !formGroup?.controls?.toggle?.value, 'off': formGroup?.controls?.toggle?.value}">
+        dark_mode
+      </span>
       <mat-slide-toggle
-        formControlName="toggle"
-        color="primary">
+        formControlName="toggle">
       </mat-slide-toggle>
-      <span class="material-icons sun" title="Light mode">light_mode</span>
+      <span
+        class="material-icons sun"
+        title="Light mode"
+        [ngClass]="{'on': formGroup?.controls?.toggle?.value, 'off': !formGroup?.controls?.toggle?.value}">
+        light_mode
+      </span>
     </div>
   </div>
 </div>

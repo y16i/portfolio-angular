@@ -14,6 +14,6 @@ export class WordpressApiService extends BaseRestApiService {
   }
   
   public getPage(slug: string): Observable<any> {
-    return this.get<any>(`${WordpressApiConstants.getPost}${slug}`);
+    return this.get<any>(`${WordpressApiConstants.getPost}`, {params: {slug: slug}});
   }
 }

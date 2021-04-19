@@ -1,0 +1,33 @@
+@import '~@angular/material/theming';
+
+#about {
+  h2 {
+    font-size: 23px;
+    color: mat-color($mat-indigo, 700);
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+  ul {
+    margin: 40px 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    margin: 10px 0 40px 0;
+    li {
+      margin: 0 10px;
+    }
+  }
+  .current-focus {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .experience {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -1,6 +1,6 @@
 import { environment } from 'src/environments/environment';
 
 export class WordpressApiConstants {
-  public static serverUrl = `${environment.api.server}/${environment.api.url}/${environment.api.version}/posts?slug=`;
-  public static getPost = WordpressApiConstants.serverUrl;
+  public static pagesUri = `${environment.api.server}/${environment.api.url}/${environment.api.version}/pages`;
+  public static getPost = WordpressApiConstants.pagesUri;
 }

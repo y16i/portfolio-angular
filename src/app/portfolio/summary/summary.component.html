@@ -1,40 +1,5 @@
 <div
   id="summary"
-  class="summary"
-  [ngClass]="{dark: document.body.classList.contains('dark-theme'), light: document.body.classList.contains('light-theme')}">
-  <div class="blocks">
-    <div class="block current">
-      <div class="name" i18n>
-        Yoshiyuki Takahashi
-      </div>
-      <div class="category" i18n>
-        PROGRAMMER
-      </div>
-      <hr>
-      <div class="title" i18n>
-        Front-end Developer: Angular
-      </div>
-    </div>
-    <div class="block current-focus">
-      <h2 i18n>Current Focus</h2>
-      <ul>
-        <li>Angular</li>
-        <li>Go</li>
-        <li>C#</li>
-        <li>MongoDB</li>
-        <li>React</li>
-      </ul>
-    </div>
-    <div class="block experience">
-      <h2 i18n>Experience</h2>
-      <ul>
-        <li>JavaScript</li>
-        <li>PHP</li>
-        <li>C++</li>
-        <li>OpenGL</li>
-        <li>MySQL</li>
-        <li>T-SQL</li>
-      </ul>
-    </div>
-  </div>
+  [ngClass]="{dark: document.body.classList.contains('dark-theme'), light: document.body.classList.contains('light-theme')}"
+  [innerHtml]="contentHtml | safeHtml">
 </div>

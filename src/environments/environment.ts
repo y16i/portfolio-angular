@@ -7,8 +7,8 @@ export const environment = {
   name: 'Portfolio',
   production: false,
   api: {
-    server: 'https://viep.org',
-    url: 'api/wp-json/wp',
+    server: 'http://localhost',
+    url: 'wp-json/wp',
     version: 'v2',
   }
 };
