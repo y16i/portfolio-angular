@@ -7,6 +7,10 @@ const routes: Routes = [
     path: '',
     component: PortfolioComponent,
   },
+  {
+    path: 'lab',
+    loadChildren: () => import('./portfolio/lab/experiments/experiments/experiments.module').then(m => m.ExperimentsModule)
+  },
 ];
 
 @NgModule({

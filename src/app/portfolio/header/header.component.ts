@@ -1,45 +1,28 @@
-import { Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
-import { FormControl, FormControlName, FormGroup } from '@angular/forms';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'pf-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit, OnDestroy {
-  private ngUnSubscribe: Subject<any> = new Subject();
-  public formGroup: FormGroup;
+export class HeaderComponent implements OnInit {
+  public toggle: boolean = true;
 
   constructor(private renderer2: Renderer2) {
   }
 
   ngOnInit(): void {
-    this.initForm();
   }
 
-  ngOnDestroy() {
-    this.ngUnSubscribe.next();
-    this.ngUnSubscribe.complete();
-  }
-
-  private initForm(): void {
-    this.formGroup = new FormGroup({
-      toggle: new FormControl(true)
-    });
-
-    // subscribe
-    this.formGroup.controls['toggle'].valueChanges
-    .pipe(takeUntil(this.ngUnSubscribe))
-    .subscribe(result => {
-      if (result) {
-        this.renderer2.removeClass(document.body, 'dark-theme');
-        this.renderer2.addClass(document.body, 'light-theme');
-      } else {
-        this.renderer2.removeClass(document.body, 'light-theme');
-        this.renderer2.addClass(document.body, 'dark-theme');
-      }
-    });
+  public switchMode(mode: string) {
+    if (!this.toggle && mode === 'light') {
+      this.toggle = true;
+      this.renderer2.removeClass(document.body, 'dark-theme');
+      this.renderer2.addClass(document.body, 'light-theme');
+    } else if (this.toggle && mode === 'dark') {
+      this.toggle = false;
+      this.renderer2.removeClass(document.body, 'light-theme');
+      this.renderer2.addClass(document.body, 'dark-theme');
+    }
   }
 }

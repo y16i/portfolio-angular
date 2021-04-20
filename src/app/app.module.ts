@@ -23,6 +23,7 @@ import { HeaderComponent } from './portfolio/header/header.component';
 import { FooterComponent } from './portfolio/footer/footer.component';
 import { MenuComponent } from './portfolio/header/menu/menu.component';
 import { SafeHtmlPipe } from './shared/pipes/safe-html.pipe';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { SafeHtmlPipe } from './shared/pipes/safe-html.pipe';
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     }),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatCardModule,
   ],
   providers: [
     {

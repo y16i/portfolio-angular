@@ -4,4 +4,15 @@
   </div>
   <div class="content"
        [innerHtml]="contentHtml | safeHtml"></div>
+  <div class="cards">
+    <mat-card>
+      <mat-card-title align="center">Chart Libraries Test</mat-card-title>
+      <mat-card-content>
+        <div>D3js is svg chart and ECharts is canvas. I was thinking canvas chart is faster than svg chart, but customization is a limited of most of library. However ECharts has plenty options.</div>
+      </mat-card-content>
+      <mat-card-actions align="center">
+        <button mat-stroked-button routerLink="lab/chart-libraries">Open</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
 </div>

@@ -7,7 +7,7 @@ export const environment = {
   name: 'Portfolio',
   production: false,
   api: {
-    server: 'http://localhost',
+    server: 'http://pf.localhost',
     url: 'wp-json/wp',
     version: 'v2',
   }
