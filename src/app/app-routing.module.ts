@@ -18,7 +18,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes, {
       relativeLinkResolution: 'corrected',
       anchorScrolling: 'enabled',
-      enableTracing: true,
+      // enableTracing: true,
     })
   ],
   exports: [RouterModule]
