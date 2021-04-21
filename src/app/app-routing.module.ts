@@ -8,16 +8,17 @@ const routes: Routes = [
     component: PortfolioComponent,
   },
   {
-    path: 'lab',
-    loadChildren: () => import('./portfolio/lab/experiments/experiments/experiments.module').then(m => m.ExperimentsModule)
+    path: 'experiments',
+    loadChildren: () => import('./portfolio/lab/experiments/experiments.module').then(m => m.ExperimentsModule)
   },
 ];
 
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
-      relativeLinkResolution: 'legacy',
-      anchorScrolling: 'enabled'
+      relativeLinkResolution: 'corrected',
+      anchorScrolling: 'enabled',
+      enableTracing: true,
     })
   ],
   exports: [RouterModule]

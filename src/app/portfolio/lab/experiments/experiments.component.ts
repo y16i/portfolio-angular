@@ -21,22 +21,13 @@ export class ExperimentsComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.dispatchDialog();
+    this.configureDialog();
   }
 
-  private dispatchDialog(): void {
+  private configureDialog(): void {
     const dialog = this.matDialog.open(this.dialogTemplate, {
       width: '800px',
       disableClose: false,
-    });
-
-    dialog.afterOpened()
-    .pipe(take(1))
-    .subscribe(() => {
-      this.router.navigate(['chart-libraries'], {
-        relativeTo: this.activatedRoute,
-        skipLocationChange: true,
-      });
     });
 
     dialog.afterClosed()

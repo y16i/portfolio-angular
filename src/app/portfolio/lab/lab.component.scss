@@ -1,6 +1,21 @@
-.mat-card {
-	max-width: 300px;
-	.mat-card-title {
-		margin: 0 0 20px 0;
-	}
+.cards {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	width: 80%;
+  .mat-card {
+    width: 300px;
+		justify-content: space-between;
+    flex-direction: column;
+    display: flex;
+    .mat-card-title {
+      margin: 0 0 20px 0;
+    }
+		.mat-card-content {
+			height: 100%;
+		}
+		.mat-card-footer {
+			margin: 0;
+		}
+  }
 }

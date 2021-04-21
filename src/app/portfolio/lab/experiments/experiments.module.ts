@@ -8,13 +8,15 @@ import { ChartLibrariesComponent } from './chart-libraries/chart-libraries.compo
 import { MatButtonModule } from '@angular/material/button';
 import { D3Component } from './chart-libraries/d3/d3.component';
 import { EchartsComponent } from './chart-libraries/echarts/echarts.component';
+import { ArchitectureComponent } from './architecture/architecture.component';
 
 @NgModule({
   declarations: [
     ExperimentsComponent,
     ChartLibrariesComponent,
     D3Component,
-    EchartsComponent
+    EchartsComponent,
+    ArchitectureComponent
   ],
   imports: [
     CommonModule,
