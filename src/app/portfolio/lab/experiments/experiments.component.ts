@@ -26,8 +26,9 @@ export class ExperimentsComponent implements OnInit, AfterViewInit {
 
   private configureDialog(): void {
     const dialog = this.matDialog.open(this.dialogTemplate, {
-      width: '800px',
+      width: '90vh',
       disableClose: false,
+      maxHeight: '90vh',
     });
 
     dialog.afterClosed()

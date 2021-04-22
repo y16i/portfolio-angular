@@ -2,20 +2,24 @@
   <div class="child">
     <pf-menu></pf-menu>
     <div class="theme-switcher">
-      <span
-        class="material-icons sun"
+      <button
+        class="sun"
+        mat-icon-button
         title="Light mode"
         [ngClass]="{'on': toggle, 'off': !toggle}"
-        (click)="switchMode('light')">
-        light_mode
-      </span>
-      <span
-        class="material-icons moon"
+        (click)="switchMode('light')"
+        [disabled]="toggle">
+        <mat-icon>light_mode</mat-icon>
+      </button>
+      <button
+        class="moon"
+        mat-icon-button
         title="Dark mode"
         [ngClass]="{'on': !toggle, 'off': toggle}"
-        (click)="switchMode('dark')">
-        dark_mode
-      </span>
+        (click)="switchMode('dark')"
+        [disabled]="!toggle">
+        <mat-icon>dark_mode</mat-icon>
+      </button>
     </div>
   </div>
 </div>

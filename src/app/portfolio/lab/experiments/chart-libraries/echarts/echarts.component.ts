@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EChartsOption } from 'echarts';
+import data from "../data/ct.json";
 
 @Component({
   selector: 'pf-echarts',
@@ -6,10 +8,67 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./echarts.component.scss']
 })
 export class EchartsComponent implements OnInit {
+  public options: EChartsOption;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() {
   }
 
+  ngOnInit(): void {
+    this.initChart();
+  }
+
+  private initChart() {
+    let certifications = data.map(d => d.certNameShort);
+    certifications = Array.from(new Set(certifications));
+    let xAxis = data.map(d => d.importedDate);
+    xAxis = Array.from(new Set(xAxis));
+
+    const series = [];
+    certifications.forEach(certification => {
+      const result = data.reduce((acc, d) => {
+        if (d.certNameShort === certification) {
+          acc.push(d.certNumbers)
+        }
+        return acc
+      }, <any>[]);
+      series.push({
+        name: certification,
+        type: 'line',
+        symbol: 'circle',
+        data: result
+      });
+    });
+  
+    this.options = {
+      textStyle: {
+        fontFamily: 'Roboto'
+      },
+      legend: {
+        data: certifications,
+        orient: 'horizontal',
+        icon: 'pin',
+      },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'cross',
+          label: {
+            color: '#fff',
+            backgroundColor: '#000'
+          }
+        },
+        order: 'seriesDesc'
+      },
+      xAxis: {
+        data: xAxis,
+        silent: false,
+        splitLine: {
+          show: false,
+        },
+      },
+      yAxis: {},
+      series: series,
+      animationEasing: 'elasticOut',
+    };
+  }
 }

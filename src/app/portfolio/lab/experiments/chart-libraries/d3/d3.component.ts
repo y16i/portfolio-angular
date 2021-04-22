@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import data from "../data/ct.json";
-import { Line } from './line';
+import { d3LineChart } from './d3-line-chart';
 
 @Component({
   selector: 'pf-d3',
@@ -9,11 +9,9 @@ import { Line } from './line';
 })
 export class D3Component implements OnInit, AfterViewInit {
   @ViewChild('chartPlotArea') private plotArea: ElementRef;
-  private lineChart: Line;
+  private lineChart: d3LineChart;
   private colorPalette: string[] = [
     '#90a4a4',
-    '#98bcbc',
-    '#c0c4a4',
     '#e8c880',
     '#546830',
   ];
@@ -24,9 +22,7 @@ export class D3Component implements OnInit, AfterViewInit {
   }
 
   public ngAfterViewInit() {
-    this.lineChart = new Line(this.plotArea);
+    this.lineChart = new d3LineChart(this.plotArea);
     this.lineChart.createChart(data, this.colorPalette);
   }
-
-
 }

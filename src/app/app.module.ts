@@ -24,7 +24,6 @@ import { FooterComponent } from './portfolio/footer/footer.component';
 import { MenuComponent } from './portfolio/header/menu/menu.component';
 import { SafeHtmlPipe } from './shared/pipes/safe-html.pipe';
 import { MatCardModule } from '@angular/material/card';
-import { CamelCasePipe } from './shared/pipes/camel-case.pipe';
 
 @NgModule({
   declarations: [
@@ -38,7 +37,6 @@ import { CamelCasePipe } from './shared/pipes/camel-case.pipe';
     FooterComponent,
     MenuComponent,
     SafeHtmlPipe,
-    CamelCasePipe
   ],
   imports: [
     BrowserModule,
