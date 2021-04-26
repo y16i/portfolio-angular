@@ -23,3 +23,7 @@ jobs:
       - run:
           name: Build
           command: npm run build --env=production
+workflows:
+  welcome:
+    jobs:
+      - test

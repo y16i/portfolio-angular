@@ -34,7 +34,7 @@ module.exports = function (config) {
       flags: ['--no-sandbox', '--headless', '--disable-gpu']
       }
     },
-    singleRun: true,
+    singleRun: true,  // keep true to stop CI after running unit test
     restartOnFileChange: true
   });
 };
