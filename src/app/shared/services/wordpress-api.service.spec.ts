@@ -54,7 +54,7 @@ describe('WordpressApiService', () => {
       status: 404,
       statusText: 'Not Found'
     });
-  
+
     httpClientSpy.get.and.returnValue(of(errorResponse));
     wordPressService.getPage('about').subscribe(
       result => {
