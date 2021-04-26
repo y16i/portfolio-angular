@@ -1,5 +1,12 @@
 image: node:14-slim
 
+definitions:
+  services:
+    docker:
+      memory: 512
+  caches:
+    npm: $HOME/.npm
+
 pipelines:
   default:
     - step:
