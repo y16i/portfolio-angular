@@ -12,18 +12,21 @@ pipelines:
     - step:
         size: 2x
         name: Lint and Test
+        caches:
+          - npm
+          - node
         script:
-          - npm ci
-          - npm run lint
           - apt update && apt install chromium -y
           - export CHROME_BIN=/usr/bin/chromium
+          - npm ci
+          - npm run lint
           - npm install
           - npm run test
     - step:
         name: Build
-        # caches:
-        #   - npm
-        #   - node
+        caches:
+          - npm
+          - node
         script:
           - npm ci
           - npm install
