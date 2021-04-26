@@ -38,7 +38,7 @@ export class EchartsComponent implements OnInit {
         data: result
       });
     });
-  
+
     this.options = {
       textStyle: {
         fontFamily: 'Roboto'

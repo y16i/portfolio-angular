@@ -74,7 +74,15 @@
         "brace-style": "off",
         "id-blacklist": "off",
         "id-match": "off",
-        "max-len": "off"
+        "max-len": "off",
+        "@typescript-eslint/consistent-type-assertions": "off",
+        "object-shorthand": "off",
+        "arrow-body-style": "off",
+        "@typescript-eslint/member-ordering": "off",
+        "@typescript-eslint/ban-types": "off",
+        "@typescript-eslint/quotes": "off",
+        "@typescript-eslint/naming-convention": "off"
+
       }
     },
     {

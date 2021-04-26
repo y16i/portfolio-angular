@@ -3,5 +3,5 @@
     {{title}}
   </div>
   <div class="content"
-       [innerHtml]="contentHtml | safeHtml"></div>
+       [innerHtml]="contentHtml | sanitizeHtml"></div>
 </div>

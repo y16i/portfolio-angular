@@ -3,7 +3,7 @@
     {{title}}
   </div>
   <div class="content"
-       [innerHtml]="contentHtml | safeHtml"></div>
+       [innerHtml]="contentHtml | sanitizeHtml"></div>
   <div class="cards">
     <mat-card>
       <mat-card-title align="center">Chart Libraries Test</mat-card-title>

@@ -41,14 +41,14 @@ export class d3LineChart {
     else{
       this.chartScale = 0.8;
     }
-    
+
     this.width = Math.round(this.element.clientWidth*this.chartScale - this.margin.left - this.margin.right);
     this.height = Math.round((this.element.clientWidth*3)/5 - this.margin.top - this.margin.bottom);
 
-    let data = chartData;
+    const data = chartData;
 
     // group by certNameShort, remove undefined
-    let certificationNames = (data.map(d => d.certNameShort)).filter(data => data);
+    let certificationNames = (data.map(d => d.certNameShort)).filter(d => d);
     // remove duplications
     certificationNames = Array.from(new Set(certificationNames));
     const groupedData = [];
@@ -58,20 +58,20 @@ export class d3LineChart {
         values: data.filter(d => d.certNameShort === certification)
       });
     });
- 
+
     // Remove old canvas
     if(d3.select('svg')){
       d3.select('svg').remove();
     }
 
-    let svg = d3.select(this.element).append('svg')
+    const svg = d3.select(this.element).append('svg')
       .attr('id', 'chart')
       .attr('width', '100%')
       .attr('height', '100%')
       .attr('viewBox', '0 0 ' + this.element.clientWidth + ' ' + this.element.clientWidth*3/5)
       .attr('preserveAspectRatio','xMinYMin meet');
 
-    let g = svg.append('g')
+    const g = svg.append('g')
       .attr('class', 'canvas')
       .attr('transform', 'translate(' + this.margin.left + ',' + this.margin.top + ')');
 
@@ -82,24 +82,24 @@ export class d3LineChart {
       this.noData.style('display', 'block');
     }
 
-    let color = d3.scaleOrdinal(colorPalette);
+    const color = d3.scaleOrdinal(colorPalette);
     color.domain(certificationNames);
 
     this.x = d3.scaleTime().rangeRound([0, this.width]);
     this.y = d3.scaleLinear().rangeRound([this.height, 0]);
 
-    let line = d3.line()
+    const line = d3.line()
       .x(d => { return this.x(new Date(d['importedDate'])); })
       .y(d => { return this.y(d['certNumbers']); });
 
     this.x.domain(d3.extent(data, (d: any) => { return new Date(d.importedDate); }));
     this.y.domain(d3.extent(data, (d: any) => { return Number(d.certNumbers); }));
 
-    let xAxis = d3.axisBottom(this.x)
+    const xAxis = d3.axisBottom(this.x)
       .ticks(10)
       .tickFormat(d3.timeFormat('%m/%d'));
 
-    let yAxis = d3.axisLeft(this.y)
+    const yAxis = d3.axisLeft(this.y)
       .ticks(4)
       .tickFormat(d3.format('d'))
       .tickSizeInner(this.width*-1);
@@ -150,21 +150,20 @@ export class d3LineChart {
         .attr('r', () => 2.0);
 
     // Legend
-    let legendMargin = {top: 5, right: 5, bottom: 5, left: this.width + 30};
-    let legendCanvasWidth = this.width*(1.0-this.chartScale) - legendMargin.right;
+    const legendMargin = {top: 5, right: 5, bottom: 5, left: this.width + 30};
+    const legendCanvasWidth = this.width*(1.0-this.chartScale) - legendMargin.right;
 
-    let legendSvg = g.append('g')
+    const legendSvg = g.append('g')
         .attr('class', 'legends')
         .attr('transform', 'translate(' + legendMargin.left + ',' + legendMargin.top + ')');
 
-    let legend = {
+    const legend = {
       width: legendCanvasWidth,
       height: 20,
       bulletSize: 10
     };
-    
 
-    let legends = legendSvg.selectAll('path')
+    const legends = legendSvg.selectAll('path')
       .data(certificationNames)
       .enter().append('g')
         .attr('class', 'legend')
@@ -179,7 +178,7 @@ export class d3LineChart {
       .attr('width', legend.width)
       .attr('height', legend.height)
       .style('fill', 'none');
-    
+
     // bullet
     legends.append('rect')
       .attr('width', legend.bulletSize)
@@ -194,13 +193,12 @@ export class d3LineChart {
       .text((d: any) => { return d; })
       .attr('font-size', '12px');
 
-
     // circle and text
     this.focus = g.append('g')
       .attr('class', 'focus')
       .attr('transform', 'translate(-100, -100)')
       .style('display', 'block');
-      
+
     this.focus.append('circle')
       .attr('fill', 'none')
       .attr('stroke', '#ff8800')
@@ -209,19 +207,19 @@ export class d3LineChart {
 
   // Legend Mouse
   private legendMouseover(d){
-    let targetClass = d.currentTarget.textContent.toLowerCase();
+    const targetClass = d.currentTarget.textContent.toLowerCase();
 
     /* change line */
     d3.select(this.element)
       .selectAll('.line-' + targetClass)
       .attr('stroke-width', '2');
-    
+
     /* change legend */
     d3.select(this.element).selectAll('rect.bullet-'+targetClass).style('fill-opacity', 0.5);
   }
 
   private legendMouseout(d){
-    let targetClass = d.currentTarget.textContent.toLowerCase();
+    const targetClass = d.currentTarget.textContent.toLowerCase();
 
     /* change line */
     d3.select(this.element)

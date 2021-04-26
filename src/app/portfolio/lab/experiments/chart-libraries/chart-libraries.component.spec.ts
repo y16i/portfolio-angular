@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ChartLibrariesComponent } from './chart-libraries.component';
 
-describe('ChartLibrariesComponent', () => {
+xdescribe('ChartLibrariesComponent', () => {
   let component: ChartLibrariesComponent;
   let fixture: ComponentFixture<ChartLibrariesComponent>;
 

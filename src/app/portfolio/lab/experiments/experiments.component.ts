@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { take } from 'rxjs/operators';
 
 @Component({
@@ -13,8 +13,7 @@ export class ExperimentsComponent implements OnInit, AfterViewInit {
   @ViewChild('ExperimentDialogFrame') dialogTemplate: TemplateRef<any>;
 
   constructor(private matDialog: MatDialog,
-              private router: Router,
-              private activatedRoute: ActivatedRoute) {
+              private router: Router) {
   }
 
   ngOnInit(): void {

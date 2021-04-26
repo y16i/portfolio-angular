@@ -1,5 +1,5 @@
 <div
   id="summary"
-  [ngClass]="{dark: document.body.classList.contains('dark-theme'), light: document.body.classList.contains('light-theme')}"
-  [innerHtml]="contentHtml | safeHtml">
+  [ngClass]="{dark: currentTheme === theme.dark, light: currentTheme === theme.light}"
+  [innerHtml]="contentHtml | sanitizeHtml">
 </div>

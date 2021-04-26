@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { WordpressApiService } from 'src/app/shared/services/wordpress-api.service';
+import { WordpressPage } from 'src/app/shared/services/wordpress-page.model';
 
 @Component({
   selector: 'pf-lab',
@@ -28,7 +29,7 @@ export class LabComponent implements OnInit, OnDestroy {
   private getContent() {
     this.wordpressService.getPage('portfolio-lab')
     .pipe(takeUntil(this.ngUnSubscribe))
-    .subscribe((json: any) => {
+    .subscribe((json: WordpressPage[]) => {
       if (json?.length > 0) {
         this.contentHtml = json[0].content?.rendered;
         this.title = json[0].title?.rendered;

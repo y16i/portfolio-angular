@@ -7,7 +7,7 @@
         mat-icon-button
         title="Light mode"
         [ngClass]="{'on': toggle, 'off': !toggle}"
-        (click)="switchMode('light')"
+        (click)="switchMode(theme.light)"
         [disabled]="toggle">
         <mat-icon>light_mode</mat-icon>
       </button>
@@ -16,7 +16,7 @@
         mat-icon-button
         title="Dark mode"
         [ngClass]="{'on': !toggle, 'off': toggle}"
-        (click)="switchMode('dark')"
+        (click)="switchMode(theme.dark)"
         [disabled]="!toggle">
         <mat-icon>dark_mode</mat-icon>
       </button>

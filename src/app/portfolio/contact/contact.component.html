@@ -2,5 +2,5 @@
   <div class="title">
     {{title}}
   </div>
-  <div class="content" [innerHtml]="contentHtml | safeHtml"></div>
+  <div class="content" [innerHtml]="contentHtml | sanitizeHtml"></div>
 </div>

@@ -1,0 +1,21 @@
+image: node:14-slim
+
+pipelines:
+  default:
+    - step:
+        size: 2x
+        name: LINT AND BUILD
+        script:
+          - npm ci
+          - npm run lint
+          - npm run build --env=production
+    - step:
+        name: Unit Tests
+        caches:
+          - npm
+          - node
+        script:
+          - apt update && apt install chromium -y
+          - export CHROME_BIN=/usr/bin/chromium
+          - npm install
+          - npm run test

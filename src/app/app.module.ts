@@ -22,7 +22,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { HeaderComponent } from './portfolio/header/header.component';
 import { FooterComponent } from './portfolio/footer/footer.component';
 import { MenuComponent } from './portfolio/header/menu/menu.component';
-import { SafeHtmlPipe } from './shared/pipes/safe-html.pipe';
+import { SanitizeHtmlPipe } from './shared/pipes/sanitize-html.pipe';
 import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
@@ -36,7 +36,7 @@ import { MatCardModule } from '@angular/material/card';
     HeaderComponent,
     FooterComponent,
     MenuComponent,
-    SafeHtmlPipe,
+    SanitizeHtmlPipe,
   ],
   imports: [
     BrowserModule,
