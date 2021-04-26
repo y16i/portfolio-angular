@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: corcleci/node:6-browsers
+      - image: circleci/node:lts-buster-browsers-legacy
         environment:
           CHROME_BIN: "/usr/bin/google-chrome"
     steps:
