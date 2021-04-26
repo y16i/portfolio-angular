@@ -11,7 +11,7 @@ pipelines:
   default:
     - step:
         size: 2x
-        name: lint and test
+        name: Lint and Test
         script:
           - npm ci
           - npm run lint
@@ -20,7 +20,7 @@ pipelines:
           - npm install
           - npm run test
     - step:
-        name: Unit Tests
+        name: Build
         # caches:
         #   - npm
         #   - node
