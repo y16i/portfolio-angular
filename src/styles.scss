@@ -12,12 +12,18 @@
   h2 {
     color: mat-color($mat-indigo, 700);
   }
+  h3 {
+    color: mat-color($mat-indigo, 700);
+  }
 }
 .dark-theme {
   @include angular-material-color($dark-theme);
   color: mat-color($mat-blue-grey, 50);
   background-color: mat-color($mat-blue-grey, 900);
   h2 {
+    color: mat-color($mat-amber, 700);
+  }
+  h3 {
     color: mat-color($mat-amber, 700);
   }
 }
@@ -37,9 +43,9 @@ body {
   flex-direction: column;
   align-items: center;
   border-top: 2px solid #fff;
-  height: 720px;
+  min-height: 720px;
+  padding: 20px;
   .title {
-    width: 20%;
     margin: 60px;
     font-size: 32px;
     text-align: center;

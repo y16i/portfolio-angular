@@ -1,5 +1,6 @@
 import { ElementRef } from '@angular/core';
 import * as d3 from 'd3';
+import { LineChartSource } from '../models/line-chart.interface';
 
 export class d3LineChart {
   private margin: any = {top: 20, bottom: 30, left: 40, right: 0};
@@ -34,7 +35,7 @@ export class d3LineChart {
       .style('display', 'none');
   }
 
-  public createChart(chartData: any, colorPalette: string[]) {
+  public createChart(chartData: LineChartSource[], colorPalette: string[]) {
     if(this.element.clientWidth < 450){
       this.chartScale = 0.7;
     }

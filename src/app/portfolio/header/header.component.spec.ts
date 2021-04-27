@@ -6,7 +6,7 @@ import { ThemeService } from '../theme.service';
 import { HeaderComponent } from './header.component';
 
 class ThemeServiceStub {
-  changeTo() {};
+  changeTo(theme: Theme) {};
 }
 
 describe('HeaderComponent', () => {
@@ -33,7 +33,7 @@ describe('HeaderComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(HeaderComponent);
     themeService = TestBed.inject(ThemeService);
-    themeService.changeTo = () => {};
+    themeService.changeTo = (theme: Theme) => {};
     component = fixture.componentInstance;
   });
 
@@ -42,30 +42,19 @@ describe('HeaderComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should be sun button is disabled and called switchMode() when use click moon icon', async() => {
-    spyOn(component, 'switchMode');
+  it('should theme button call themeService.changeTo() when use click moon icon', () => {
+    spyOn(themeService, 'changeTo');
     fixture.detectChanges();
-    const buttonDisabled = fixture.debugElement.nativeElement.querySelector('button.sun').disabled;
-    expect(buttonDisabled).toBeTruthy();
-    const moonButton = fixture.debugElement.nativeElement.querySelector('button.moon');
-    expect(moonButton).toBeTruthy();
-    moonButton.click();
-    await fixture.whenStable().then(() => {
-      expect(component.switchMode).toHaveBeenCalledOnceWith(Theme.dark);
-    });
+    const button = fixture.debugElement.nativeElement.querySelector('button.moon');
+    expect(button).toBeTruthy();
+    button.click();
+    expect(themeService.changeTo).toHaveBeenCalledOnceWith(Theme.dark);
   });
 
-  it('should be moon button is disabled and called switchMode() when use click sun icon', async() => {
-    spyOn(component, 'switchMode');
-    component.toggle = false;
+  it('should show sun icon when theme is dark theme', () => {
+    component.currentTheme = Theme.dark;
     fixture.detectChanges();
-    const buttonDisabled = fixture.debugElement.nativeElement.querySelector('button.moon').disabled;
-    expect(buttonDisabled).toBeTruthy();
-    const sunButton = fixture.debugElement.nativeElement.querySelector('button.sun');
-    expect(sunButton).toBeTruthy();
-    sunButton.click();
-    await fixture.whenStable().then(() => {
-      expect(component.switchMode).toHaveBeenCalledOnceWith(Theme.light);
-    });
+    const button = fixture.debugElement.nativeElement.querySelector('button.sun');
+    expect(button).toBeTruthy();
   });
 });

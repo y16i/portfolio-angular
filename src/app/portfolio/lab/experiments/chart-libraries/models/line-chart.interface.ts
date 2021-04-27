@@ -1,4 +1,4 @@
-export interface LinechartSource {
+export interface LineChartSource {
   importedDate: string,
   certName: string,
   certNameShort: string,

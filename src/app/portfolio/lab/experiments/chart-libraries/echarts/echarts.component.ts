@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EChartsOption } from 'echarts';
 import data from "../data/ct.json";
+import { LineChartSource } from '../models/line-chart.interface';
 
 @Component({
   selector: 'pf-echarts',
@@ -18,14 +19,14 @@ export class EchartsComponent implements OnInit {
   }
 
   private initChart() {
-    let certifications = data.map(d => d.certNameShort);
+    let certifications = data.map((d: LineChartSource) => d.certNameShort);
     certifications = Array.from(new Set(certifications));
-    let xAxis = data.map(d => d.importedDate);
+    let xAxis = data.map((d: LineChartSource) => d.importedDate);
     xAxis = Array.from(new Set(xAxis));
 
     const series = [];
     certifications.forEach(certification => {
-      const result = data.reduce((acc, d) => {
+      const result = data.reduce((acc: any, d: LineChartSource) => {
         if (d.certNameShort === certification) {
           acc.push(d.certNumbers)
         }

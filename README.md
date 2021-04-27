@@ -15,3 +15,9 @@ ng serve
 # hot reload
 ng serve --hmr
 ```
+
+## CI
+Bitbucket pipeline: Disabled
+CircleCI: Enabled
+
+git push -> bitbucket -> CircleCI: Lint/Test/Build

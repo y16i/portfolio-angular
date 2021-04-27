@@ -13,7 +13,7 @@
       font-size: 20px;
       font-weight: bold;
       &:not(:last-child) {
-        margin: 20px 0 0 0;
+        margin: 20px 0 10px 0;
       }
     }
     .code {
@@ -27,6 +27,12 @@
 				font-size: 18px;
         color: mat-color($mat-blue, 400);
 			}
+    }
+    pf-echarts,
+    pf-d3 {
+      display: block;
+      background-color: #f5f5f5;
+      color: mat-color($mat-blue-grey, 900);
     }
   }
 }
