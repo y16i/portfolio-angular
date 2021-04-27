@@ -1,5 +1,6 @@
 import { NO_ERRORS_SCHEMA, Renderer2 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { of } from 'rxjs';
 import { Theme } from '../theme.enum';
 import { ThemeService } from '../theme.service';
 
@@ -7,6 +8,7 @@ import { HeaderComponent } from './header.component';
 
 class ThemeServiceStub {
   changeTo(theme: Theme) {};
+  theme$ = of({});
 }
 
 describe('HeaderComponent', () => {
@@ -33,6 +35,7 @@ describe('HeaderComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(HeaderComponent);
     themeService = TestBed.inject(ThemeService);
+    themeService.theme$ = of(Theme.light); // default is light-theme
     themeService.changeTo = (theme: Theme) => {};
     component = fixture.componentInstance;
   });
@@ -52,7 +55,8 @@ describe('HeaderComponent', () => {
   });
 
   it('should show sun icon when theme is dark theme', () => {
-    component.currentTheme = Theme.dark;
+    themeService.theme$ = of(Theme.dark); // default is light-theme
+    // component.currentTheme = Theme.dark;
     fixture.detectChanges();
     const button = fixture.debugElement.nativeElement.querySelector('button.sun');
     expect(button).toBeTruthy();
