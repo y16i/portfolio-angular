@@ -17,8 +17,8 @@ export class WordpressApiService extends BaseRestApiService {
 
   public getPage(slug: string): Observable<WordpressPage[]> {
     return this.get<WordpressPage[]>(`${WordpressApiConstants.getPost}`, {params: {slug: slug}})
-            .pipe(
-              map(results => results.map(result => new WordpressPage(result)))
-            );
+      .pipe(
+        map(results => results.map(result => new WordpressPage(result)))
+      );
   }
 }

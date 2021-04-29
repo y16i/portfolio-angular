@@ -10,7 +10,7 @@ xdescribe('EchartsComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ EchartsComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

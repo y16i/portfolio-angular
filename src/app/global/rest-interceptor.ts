@@ -17,7 +17,7 @@ export class RestInterceptor implements HttpInterceptor {
       // add a token to all http outgoings
       // const auth = request.headers.get('Authorization');
       // if (!auth?.includes('Bearer ')) {
-        // const token = this.cookieService.get('AccessToken');
+      // const token = this.cookieService.get('AccessToken');
       //   if (token) {
       //     request = request.clone({
       //       setHeaders: {
@@ -58,23 +58,23 @@ export class RestInterceptor implements HttpInterceptor {
       return throwError(errorResponse);
     }
     switch (errorResponse.status) {
-      case (401):
-        const errorName = errorResponse.error && errorResponse.error.error;
-        // if (errorName === 'InvalidToken') {
-        // } else {
-        //   const token = this.cookieService.get('AccessToken');
-        //   if (!token || token === '') {
-        //     this.router.navigate(['/login']);
-        //   } else {
-        //   }
-        // }
+    case (401):
+      const errorName = errorResponse.error && errorResponse.error.error;
+      // if (errorName === 'InvalidToken') {
+      // } else {
+      //   const token = this.cookieService.get('AccessToken');
+      //   if (!token || token === '') {
+      //     this.router.navigate(['/login']);
+      //   } else {
+      //   }
+      // }
+      return EMPTY;
+    case (400):
+      const possibleBadCredentialMsg = errorResponse.error.error_description;
+      if (possibleBadCredentialMsg && possibleBadCredentialMsg === 'Bad credentials') {
         return EMPTY;
-      case (400):
-        const possibleBadCredentialMsg = errorResponse.error.error_description;
-        if (possibleBadCredentialMsg && possibleBadCredentialMsg === 'Bad credentials') {
-          return EMPTY;
-        }
-        break;
+      }
+      break;
     }
     return throwError(errorResponse);
   }

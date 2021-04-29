@@ -27,12 +27,12 @@ export class ContactComponent implements OnInit, OnDestroy {
 
   private getContent() {
     this.wordpressService.getPage('portfolio-contact')
-    .pipe(takeUntil(this.ngUnSubscribe))
-    .subscribe((json: WordpressPage[]) => {
-      if (json?.length > 0) {
-        this.contentHtml = json[0].content?.rendered;
-        this.title = json[0].title?.rendered;
-      }
-    });
+      .pipe(takeUntil(this.ngUnSubscribe))
+      .subscribe((json: WordpressPage[]) => {
+        if (json?.length > 0) {
+          this.contentHtml = json[0].content?.rendered;
+          this.title = json[0].title?.rendered;
+        }
+      });
   }
 }

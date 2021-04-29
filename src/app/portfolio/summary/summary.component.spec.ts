@@ -30,7 +30,7 @@ describe('SummaryComponent', () => {
         {provide: ThemeService, useValue: ThemeServiceStub}
       ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

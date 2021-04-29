@@ -14,7 +14,7 @@ describe('MenuComponent', () => {
         NO_ERRORS_SCHEMA
       ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

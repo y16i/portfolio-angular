@@ -20,12 +20,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.themeService.theme$
-    .pipe(takeUntil(this.ngUnSubscribe))
-    .subscribe((theme: Theme) => {
-      if (this.currentTheme !== theme) {
-        this.currentTheme = theme;
-      }
-    });
+      .pipe(takeUntil(this.ngUnSubscribe))
+      .subscribe((theme: Theme) => {
+        if (this.currentTheme !== theme) {
+          this.currentTheme = theme;
+        }
+      });
   }
 
   ngOnDestroy() {

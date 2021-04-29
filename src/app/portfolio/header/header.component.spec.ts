@@ -20,7 +20,7 @@ describe('HeaderComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [
         HeaderComponent,
-       ],
+      ],
       providers: [
         Renderer2,
         {provide: ThemeService, useValue: ThemeServiceStub}
@@ -29,7 +29,7 @@ describe('HeaderComponent', () => {
         NO_ERRORS_SCHEMA
       ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

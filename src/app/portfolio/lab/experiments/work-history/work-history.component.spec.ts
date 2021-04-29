@@ -10,7 +10,7 @@ xdescribe('WorkHistoryComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ WorkHistoryComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

@@ -10,7 +10,7 @@ xdescribe('ArchitectureComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ ArchitectureComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

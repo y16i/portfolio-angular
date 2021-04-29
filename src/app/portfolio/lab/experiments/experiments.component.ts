@@ -31,9 +31,9 @@ export class ExperimentsComponent implements OnInit, AfterViewInit {
     });
 
     dialog.afterClosed()
-    .pipe(take(1))
-    .subscribe(() => {
-      this.router.navigate(['/'], {fragment: 'lab'});
-    });
+      .pipe(take(1))
+      .subscribe(() => {
+        this.router.navigate(['/'], {fragment: 'lab'});
+      });
   }
 }

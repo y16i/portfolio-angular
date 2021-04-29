@@ -6,10 +6,10 @@ import { SanitizeHtmlPipe } from './sanitize-html.pipe';
 describe('SanitizeHtmlPipe', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-        imports: [
-          BrowserModule
-        ]
-      });
+      imports: [
+        BrowserModule
+      ]
+    });
   });
 
   it('create an instance', inject([DomSanitizer], (domSanitizer: DomSanitizer) => {

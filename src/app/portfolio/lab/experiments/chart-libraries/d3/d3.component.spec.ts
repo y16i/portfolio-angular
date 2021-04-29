@@ -10,7 +10,7 @@ xdescribe('D3Component', () => {
     await TestBed.configureTestingModule({
       declarations: [ D3Component ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

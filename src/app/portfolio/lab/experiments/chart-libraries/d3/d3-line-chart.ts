@@ -129,13 +129,13 @@ export class d3LineChart {
       .selectAll('path')
       .data(groupedData)
       .enter().append('path')
-        .attr('d', (d: any) => { d['line'] = this; return line(d.values); })
-        .attr('class', (d: any) => 'line-' + d.key.toLowerCase())
-        .attr('stroke', (d: any) => color(d.key))
-        .attr('stroke-linejoin', 'round')
-        .attr('stroke-linecap', 'round')
-        .attr('stroke-width', '1  ')
-        .attr('fill', 'none');
+      .attr('d', (d: any) => { d['line'] = this; return line(d.values); })
+      .attr('class', (d: any) => 'line-' + d.key.toLowerCase())
+      .attr('stroke', (d: any) => color(d.key))
+      .attr('stroke-linejoin', 'round')
+      .attr('stroke-linecap', 'round')
+      .attr('stroke-width', '1  ')
+      .attr('fill', 'none');
 
     // Dots
     g.append('g')
@@ -143,20 +143,20 @@ export class d3LineChart {
       .selectAll('path')
       .data(data)
       .enter().append('circle')
-        .attr('class', 'dot')
-        .style('opacity', 1)
-        .style('fill', (d: any) => color(d.certNameShort))
-        .attr('cx', (d: any) => this.x(new Date(d.importedDate)))
-        .attr('cy', (d: any) => this.y(Number(d.certNumbers)))
-        .attr('r', () => 2.0);
+      .attr('class', 'dot')
+      .style('opacity', 1)
+      .style('fill', (d: any) => color(d.certNameShort))
+      .attr('cx', (d: any) => this.x(new Date(d.importedDate)))
+      .attr('cy', (d: any) => this.y(Number(d.certNumbers)))
+      .attr('r', () => 2.0);
 
     // Legend
     const legendMargin = {top: 5, right: 5, bottom: 5, left: this.width + 30};
     const legendCanvasWidth = this.width*(1.0-this.chartScale) - legendMargin.right;
 
     const legendSvg = g.append('g')
-        .attr('class', 'legends')
-        .attr('transform', 'translate(' + legendMargin.left + ',' + legendMargin.top + ')');
+      .attr('class', 'legends')
+      .attr('transform', 'translate(' + legendMargin.left + ',' + legendMargin.top + ')');
 
     const legend = {
       width: legendCanvasWidth,
@@ -167,12 +167,12 @@ export class d3LineChart {
     const legends = legendSvg.selectAll('path')
       .data(certificationNames)
       .enter().append('g')
-        .attr('class', 'legend')
-        .attr('transform', (d, i) => 'translate(0,' + i*legend.height + ')')
-        .attr('pointer-events', 'all')
-        .style('cursor', 'pointer')
-        .on('mouseover', (d) => { this.legendMouseover(d); })
-        .on('mouseout', (d) => { this.legendMouseout(d); });
+      .attr('class', 'legend')
+      .attr('transform', (d, i) => 'translate(0,' + i*legend.height + ')')
+      .attr('pointer-events', 'all')
+      .style('cursor', 'pointer')
+      .on('mouseover', (d) => { this.legendMouseover(d); })
+      .on('mouseout', (d) => { this.legendMouseout(d); });
 
     // legend for hovering area recognition
     legends.append('rect')

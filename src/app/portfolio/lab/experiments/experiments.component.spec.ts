@@ -33,7 +33,7 @@ describe('ExperimentsComponent', () => {
         MatDialog
       ],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

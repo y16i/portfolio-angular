@@ -10,7 +10,7 @@ xdescribe('ChartLibrariesComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ ChartLibrariesComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

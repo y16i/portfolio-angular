@@ -14,7 +14,7 @@ describe('FooterComponent', () => {
       providers: [
       ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

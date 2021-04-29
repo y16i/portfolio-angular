@@ -83,8 +83,8 @@
         "@typescript-eslint/quotes": "off",
         "@typescript-eslint/naming-convention": "off",
         "space-before-function-paren": "off",
-        "@typescript-eslint/no-unused-expressions": "off"
-
+        "@typescript-eslint/no-unused-expressions": "off",
+        "indent": ["error", 2]
       }
     },
     {

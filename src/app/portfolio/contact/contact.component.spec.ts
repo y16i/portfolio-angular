@@ -22,7 +22,7 @@ describe('ContactComponent', () => {
         {provide: WordpressApiService, useValue: wordpressServiceSpy},
       ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
