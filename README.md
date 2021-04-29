@@ -24,11 +24,11 @@ ng serve --hmr
 ```
 
 ## Production build
-npm run build --env=production
+ng build --prod
 
 ## CI
-Bitbucket pipeline: Disabled
-CircleCI: Enabled
+Bitbucket pipeline: Inactive
+CircleCI: Active
 
 git push -> bitbucket -> CircleCI: Lint/Test/Build
 

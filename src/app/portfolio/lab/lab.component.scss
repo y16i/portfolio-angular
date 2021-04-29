@@ -1,23 +1,25 @@
 .cards {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
-	width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 80%;
   .mat-card {
     width: 300px;
-		justify-content: space-between;
+    justify-content: space-between;
     flex-direction: column;
     display: flex;
-		margin: 10px;
+    margin: 10px;
     .mat-card-title {
       margin: 0 0 20px 0;
-    }
-		.mat-card-content {
-			height: 100%;
 			text-align: center;
-		}
-		.mat-card-footer {
-			margin: 0;
-		}
+    }
+    .mat-card-content {
+      height: 100%;
+      text-align: center;
+    }
+    .mat-card-footer {
+      margin: 0;
+			text-align: center;
+    }
   }
 }
