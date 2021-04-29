@@ -10,6 +10,7 @@ import { D3Component } from './chart-libraries/d3/d3.component';
 import { EchartsComponent } from './chart-libraries/echarts/echarts.component';
 import { ArchitectureComponent } from './architecture/architecture.component';
 import { NgxEchartsModule } from 'ngx-echarts';
+import { WorkHistoryComponent } from './work-history/work-history.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { NgxEchartsModule } from 'ngx-echarts';
     ChartLibrariesComponent,
     D3Component,
     EchartsComponent,
-    ArchitectureComponent
+    ArchitectureComponent,
+    WorkHistoryComponent
   ],
   imports: [
     CommonModule,

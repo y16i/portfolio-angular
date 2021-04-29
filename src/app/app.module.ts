@@ -24,6 +24,7 @@ import { FooterComponent } from './portfolio/footer/footer.component';
 import { MenuComponent } from './portfolio/header/menu/menu.component';
 import { SanitizeHtmlPipe } from './shared/pipes/sanitize-html.pipe';
 import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { MatCardModule } from '@angular/material/card';
     }),
     BrowserAnimationsModule,
     MatCardModule,
+    MatMenuModule,
   ],
   providers: [
     {

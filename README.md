@@ -16,6 +16,9 @@ ng test --watch=true
 ```bash
 ng serve
 
+# with proxy
+ng serve --proxy-config proxy.conf.json
+
 # hot reload
 ng serve --hmr
 ```
@@ -28,3 +31,26 @@ Bitbucket pipeline: Disabled
 CircleCI: Enabled
 
 git push -> bitbucket -> CircleCI: Lint/Test/Build
+
+## apache2 config sample
+```bash
+<VirtualHost *:80>
+	ServerName my-domain.com
+	DocumentRoot /var/www/portfolio/frontend
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+	<Directory /var/www/portfolio/frontend>
+	  Options Indexes FollowSymLinks
+	  AllowOverride All
+	  Require all granted
+	</Directory>
+
+	Alias /api /var/www/portfolio/WordPress
+	<Directory /var/www/portfolio/WordPress>
+	  Options Indexes FollowSymLinks
+	  AllowOverride All
+	  Require all granted
+	</Directory>
+</VirtualHost>
+```

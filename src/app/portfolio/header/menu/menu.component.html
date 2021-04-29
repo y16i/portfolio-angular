@@ -1,33 +1,74 @@
-<ul>
-  <li>
-    <a mat-list-item
-      routerLink="/"
-      mat-button i18n>
-      Home
-    </a>
-  </li>
-  <li>
-    <a mat-list-item
-      routerLink="/"
-      mat-button
-      fragment="about" i18n>
-      About
-    </a>
-  </li>
-  <li>
-    <a mat-list-item
-      routerLink="/"
-      mat-button
-      fragment="lab" i18n>
-      Lab
-    </a>
-  </li>
-  <li>
-    <a mat-list-item
-      routerLink="/"
-      mat-button
-      fragment="contact" i18n>
-      Contact
-    </a>
-  </li>
-</ul>
+<div class="compact">
+  <button
+    mat-stroked-button
+    (click)="show = show ? false : true;">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <ng-container *ngIf="show">
+    <div class="menu-item">
+      <a
+        (click)="show = false"
+        routerLink="/"
+        mat-button>
+        Home
+      </a>
+      <a
+        (click)="show = false"
+        routerLink="/"
+        mat-button
+        fragment="about">
+        About
+      </a>
+      <a
+        (click)="show = false"
+        routerLink="/"
+        mat-button
+        fragment="lab">
+        Lab
+      </a>
+      <a
+        (click)="show = false"
+        routerLink="/"
+        mat-button
+        fragment="contact">
+        Contact
+      </a>
+    </div>
+  </ng-container>
+</div>
+
+<div class="full-size">
+  <ul>
+    <li>
+      <a mat-list-item
+        routerLink="/"
+        mat-button>
+        Home
+      </a>
+    </li>
+    <li>
+      <a mat-list-item
+        routerLink="/"
+        mat-button
+        fragment="about">
+        About
+      </a>
+    </li>
+    <li>
+      <a mat-list-item
+        routerLink="/"
+        mat-button
+        fragment="lab">
+        Lab
+      </a>
+    </li>
+    <li>
+      <a mat-list-item
+        routerLink="/"
+        mat-button
+        fragment="contact">
+        Contact
+      </a>
+    </li>
+  </ul>
+</div>

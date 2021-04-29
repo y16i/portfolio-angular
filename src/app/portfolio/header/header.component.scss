@@ -48,3 +48,12 @@
     }
   }
 }
+
+
+@media (max-width:960px) {
+  .header {
+    .child {
+      justify-content: space-between;
+    }
+  }
+}

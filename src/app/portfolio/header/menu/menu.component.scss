@@ -2,8 +2,47 @@ ul {
   list-style-type: none;
   display: flex;
   flex-direction: row;
-	margin: 0;
+  margin: 0;
   li a {
     font-size: 21px;
   }
 }
+.compact {
+  display: none;
+}
+
+ @media (max-width:960px) {
+  .full-size {
+    display: none;
+  }
+  .compact {
+    display: block;
+    position: relative;
+    button {
+      margin: 0 0 0 10px;
+      min-width: 32px;
+      padding: 0 5px;
+      border: none;
+    }
+    .menu-item {
+      display: flex;
+      flex-direction: column;
+      z-index: 100;
+      position: absolute;
+      left: 5px;
+      border-radius: 5px;
+    }
+  }
+}
+
+// @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+//   ul.full-size {
+//     display: none !important;
+//   }
+// }
+
+// @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+//   ul.full-size {
+//     display: block;
+//   }
+// }

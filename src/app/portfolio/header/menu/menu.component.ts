@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-
+  public show: boolean = false
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  // mat-menu doesn't work for fragment scroll and use this.
+  public open() {
+
+  }
 }
