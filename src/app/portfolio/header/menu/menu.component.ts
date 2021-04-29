@@ -11,9 +11,4 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  // mat-menu doesn't work for fragment scroll and use this.
-  public open() {
-
-  }
 }
