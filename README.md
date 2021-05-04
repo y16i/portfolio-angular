@@ -16,9 +16,6 @@ ng test --watch=true
 ```bash
 ng serve
 
-# with proxy
-ng serve --proxy-config proxy.conf.json
-
 # hot reload
 ng serve --hmr
 ```
