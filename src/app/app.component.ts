@@ -14,8 +14,8 @@ export class AppComponent {
 
   constructor(private router: Router) {
     router.events.pipe(filter(e => e instanceof NavigationEnd))
-    .subscribe((e: NavigationEnd) => {
-      gtag('config', environment.gTag.id);
-    });
+      .subscribe((e: NavigationEnd) => {
+        gtag('config', environment.gTag.id);
+      });
   }
 }
