@@ -24,6 +24,14 @@ jobs:
     docker:
       - image: circleci/node:lts-buster-browsers-legacy
     steps:
+      - checkout
+      - run:
+          name: install node modules
+          command: npm install
+      - save_cache:
+          paths:
+            - ./node_modules
+          key: depandency-cache-{{ checksum "package.json" }}
       - run:
           name: Build
           command: npm run build --env=production
