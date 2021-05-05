@@ -37,7 +37,7 @@ jobs:
           command: npm run build --env=production
       - run:
           name: tar
-          command: tar -zcvf portfolio.tar.gz ./dist/portfolio
+          command: tar -zcvf portfolio.tar.gz ./dist/portfolio && ls -lha
       - aws-s3/copy:
           arguments: '--recursive'
           aws-access-key-id: AWS_ACCESS_KEY_ID
