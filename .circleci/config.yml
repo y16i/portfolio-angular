@@ -20,10 +20,24 @@ jobs:
       - run:
           name: Unit Tests
           command: npm run test
+  build:
+    docker:
+      - image: circleci/node:lts-buster-browsers-legacy
+    steps:
       - run:
           name: Build
           command: npm run build --env=production
+      - aws-s3/copy:
+          arguments: '--recursive'
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-region: AWS_REGION
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+          from: ./dist/portfolio
+          to: 's3://ytakahashi-portfolio'
 workflows:
-  welcome:
+  test_and_build:
     jobs:
       - test
+      - build
+orbs:
+  aws-s3: circleci/aws-s3@2.0.0

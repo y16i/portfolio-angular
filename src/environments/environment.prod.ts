@@ -6,5 +6,8 @@ export const environment = {
     server: 'https://yoshiyukitakahashi.com/api',
     url: 'wp-json/wp',
     version: 'v2',
+  },
+  gTag: {
+    id: 'G-4ZZQHKCRW0'
   }
 };
