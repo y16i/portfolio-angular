@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "npm run build --env=production",
+    "build": "ng build",
     "dev:proxy": "ng serve --proxy-config proxy.conf.json",
     "prod:proxy": "http-server ./dist/portfolio/ -p4200 -P proxy.conf.json",
     "test": "ng test",
