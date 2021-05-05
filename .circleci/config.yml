@@ -35,12 +35,15 @@ jobs:
       - run:
           name: Build
           command: npm run build --env=production
+      - run:
+          name: tar
+          command: tar -zcvf portfolio.tar.gz ./dist/portfolio
       - aws-s3/copy:
           arguments: '--recursive'
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-region: AWS_REGION
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
-          from: ./dist/portfolio
+          from: ./portfolio.tar.gz
           to: 's3://ytakahashi-portfolio'
 workflows:
   test_and_build:
