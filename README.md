@@ -22,6 +22,8 @@ ng serve --hmr
 
 ## Production build
 ng build --prod
+or
+npm run build --env=production
 
 ## CI
 Bitbucket pipeline: Inactive
