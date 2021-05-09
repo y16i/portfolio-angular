@@ -3,9 +3,9 @@ export const environment = {
   name: 'Portfolio',
   production: false,
   api: {
-    server: 'http://localhost:4200/api',
-    url: 'wp-json/wp',
-    version: 'v2',
+    server: 'http://localhost:4200',
+    url: 'api',
+    version: 'v1.0',
   },
   gTag: {
     id: 'G-4ZZQHKCRW0'
