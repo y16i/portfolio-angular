@@ -3,7 +3,7 @@ export const environment = {
   name: 'Portfolio',
   production: true,
   api: {
-    server: 'https://yoshiyukitakahashi.com/wp',
+    server: 'https://yoshiyukitakahashi.com/wp/api',
     url: 'wp-json/wp',
     version: 'v2',
   },
