@@ -1,5 +1,5 @@
 {
-  "/api/*": {
+  "/api/v1.0/*": {
     "target": "https://yoshiyukitakahashi.com",
     "secure": false,
     "logLevel": "debug",
