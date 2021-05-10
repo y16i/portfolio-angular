@@ -10,7 +10,7 @@ xdescribe('GoBackendComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ GoBackendComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

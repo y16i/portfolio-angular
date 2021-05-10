@@ -10,7 +10,7 @@ describe('CodeLinkComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ CodeLinkComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
