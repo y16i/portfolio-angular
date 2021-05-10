@@ -11,6 +11,8 @@ import { EchartsComponent } from './chart-libraries/echarts/echarts.component';
 import { ArchitectureComponent } from './architecture/architecture.component';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { WorkHistoryComponent } from './work-history/work-history.component';
+import { GoBackendComponent } from './go-backend/go-backend.component';
+import { CodeLinkComponent } from './code-link/code-link.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { WorkHistoryComponent } from './work-history/work-history.component';
     D3Component,
     EchartsComponent,
     ArchitectureComponent,
-    WorkHistoryComponent
+    WorkHistoryComponent,
+    GoBackendComponent,
+    CodeLinkComponent,
   ],
   imports: [
     CommonModule,

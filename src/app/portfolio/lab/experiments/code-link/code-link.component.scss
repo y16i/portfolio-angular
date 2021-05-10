@@ -1,0 +1,14 @@
+@import '~@angular/material/theming';
+
+.code-link {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  a {
+    line-height: 18px;
+  }
+  .material-icons {
+    font-size: 18px;
+    color: mat-color($mat-blue, 400);
+  }
+}

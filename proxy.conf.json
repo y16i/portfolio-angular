@@ -1,6 +1,6 @@
 {
   "/api/v1.0/*": {
-    "target": "https://yoshiyukitakahashi.com",
+    "target": "http://localhost:8080",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true
