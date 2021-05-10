@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CodeLinkComponent } from './code-link.component';
 
-describe('CodeLinkComponent', () => {
+xdescribe('CodeLinkComponent', () => {
   let component: CodeLinkComponent;
   let fixture: ComponentFixture<CodeLinkComponent>;
 
