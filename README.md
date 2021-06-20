@@ -26,7 +26,9 @@ or
 npm run build --env=production
 
 ## CI
-CircleCI
+CircleCI: Active
+
+BitBucket: Inactive
 
 ## apache2 config sample
 ```bash
