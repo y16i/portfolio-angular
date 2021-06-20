@@ -21,6 +21,10 @@ jobs:
           name: Unit Tests
           command: npm run test
   build:
+    filters:
+      branches:
+        only:
+          - master
     docker:
       - image: circleci/node:lts-buster-browsers-legacy
     steps:
