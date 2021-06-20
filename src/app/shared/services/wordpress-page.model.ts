@@ -3,10 +3,15 @@ export interface IRendered {
   protected?: boolean;
 }
 
-export interface IWordpressPageInterface {
+// for go wordpress api
+export interface WordpressPageMin {
   id: number;
   title: IRendered;
   content: IRendered;
+}
+
+// for wordpress api
+export interface WordpressPage extends WordpressPageMin {
   date?: Date;
   date_gmt?: Date;
   guid?: IRendered;
@@ -26,16 +31,4 @@ export interface IWordpressPageInterface {
   template?: string;
   meta?: [];
   _links?: any;
-}
-
-export class WordpressPage implements IWordpressPageInterface {
-  id: number;
-  title: IRendered;
-  content: IRendered;
-
-  constructor(data: IWordpressPageInterface) {
-    this.id = data.id;
-    this.title = data.title;
-    this.content = data.content;
-  }
 }

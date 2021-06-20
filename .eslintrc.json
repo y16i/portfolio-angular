@@ -84,7 +84,10 @@
         "@typescript-eslint/naming-convention": "off",
         "space-before-function-paren": "off",
         "@typescript-eslint/no-unused-expressions": "off",
-        "indent": ["error", 2]
+        "indent": ["error", 2],
+        "no-bitwise": "off",
+        "no-fallthrough": "off",
+        "no-console": "off"
       }
     },
     {

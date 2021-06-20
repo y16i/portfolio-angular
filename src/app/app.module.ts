@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +25,7 @@ import { MenuComponent } from './portfolio/header/menu/menu.component';
 import { SanitizeHtmlPipe } from './shared/pipes/sanitize-html.pipe';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
+import { GlobalErrorHandler } from './global/global-error-handler';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,10 @@ import { MatMenuModule } from '@angular/material/menu';
       useClass: RestInterceptor,
       multi: true
     },
+    {
+      provide: ErrorHandler,
+      useClass: GlobalErrorHandler
+    }
   ],
   bootstrap: [AppComponent]
 })

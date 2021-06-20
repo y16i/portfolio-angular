@@ -42,22 +42,22 @@ describe('SummaryComponent', () => {
   });
 
   it('should create', () => {
-    const response = new WordpressPage({
+    const response: WordpressPage = {
       id: 1,
       title: <IRendered>{ rendered: ''},
       content: <IRendered>{ rendered: ''}
-    });
+    };
     wordpressApiService.getPage.and.returnValue(of([response]));
     fixture.detectChanges();
     expect(component).toBeTruthy();
   });
 
   it('should get title and content', () => {
-    const response = new WordpressPage({
+    const response: WordpressPage = {
       id: 1,
       title: <IRendered>{ rendered: 'Summary'},
       content: <IRendered>{ rendered: '<div>content</div>'}
-    });
+    };
     wordpressApiService.getPage.and.returnValue(of([response]));
     fixture.detectChanges();
     expect(component.title).toEqual('Summary');
@@ -65,11 +65,11 @@ describe('SummaryComponent', () => {
   });
 
   it('should be light theme', () => {
-    const response = new WordpressPage({
+    const response: WordpressPage = {
       id: 1,
       title: <IRendered>{ rendered: ''},
       content: <IRendered>{ rendered: ''}
-    });
+    };
     wordpressApiService.getPage.and.returnValue(of([response]));
     // set light-theme
     // themeService.theme$ = of(Theme.light);
@@ -80,11 +80,11 @@ describe('SummaryComponent', () => {
   });
 
   it('should be dark theme', () => {
-    const response = new WordpressPage({
+    const response: WordpressPage = {
       id: 1,
       title: <IRendered>{ rendered: ''},
       content: <IRendered>{ rendered: ''}
-    });
+    };
     wordpressApiService.getPage.and.returnValue(of([response]));
     themeService.theme$ = of(Theme.dark);
     fixture.detectChanges();

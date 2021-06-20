@@ -49,6 +49,12 @@ workflows:
   test_and_build:
     jobs:
       - test
-      - build
+      - build:
+          filters:
+            tags:
+              only: /v\d+\.\d+\.\d+/
+            branches:
+              only:
+                - master
 orbs:
   aws-s3: circleci/aws-s3@2.0.0
