@@ -36,7 +36,7 @@ describe('LabComponent', () => {
   });
 
   it('should create', () => {
-     const response: WordpressPage = {
+    const response: WordpressPage = {
       id: 1,
       title: <IRendered>{ rendered: ''},
       content: <IRendered>{ rendered: ''}
@@ -47,7 +47,7 @@ describe('LabComponent', () => {
   });
 
   it('should get title and content', () => {
-     const response: WordpressPage = {
+    const response: WordpressPage = {
       id: 1,
       title: <IRendered>{ rendered: 'Experience'},
       content: <IRendered>{ rendered: '<div>content</div>'}

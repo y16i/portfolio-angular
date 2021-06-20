@@ -32,7 +32,7 @@ describe('ContactComponent', () => {
   });
 
   it('should create', () => {
-     const response: WordpressPage = {
+    const response: WordpressPage = {
       id: 1,
       title: <IRendered>{ rendered: ''},
       content: <IRendered>{ rendered: ''}
@@ -43,7 +43,7 @@ describe('ContactComponent', () => {
   });
 
   it('should get title and content', () => {
-     const response: WordpressPage = {
+    const response: WordpressPage = {
       id: 1,
       title: <IRendered>{ rendered: 'Contact'},
       content: <IRendered>{ rendered: '<div>content</div>'}

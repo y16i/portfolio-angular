@@ -42,7 +42,7 @@ describe('SummaryComponent', () => {
   });
 
   it('should create', () => {
-     const response: WordpressPage = {
+    const response: WordpressPage = {
       id: 1,
       title: <IRendered>{ rendered: ''},
       content: <IRendered>{ rendered: ''}
@@ -53,7 +53,7 @@ describe('SummaryComponent', () => {
   });
 
   it('should get title and content', () => {
-     const response: WordpressPage = {
+    const response: WordpressPage = {
       id: 1,
       title: <IRendered>{ rendered: 'Summary'},
       content: <IRendered>{ rendered: '<div>content</div>'}
@@ -65,7 +65,7 @@ describe('SummaryComponent', () => {
   });
 
   it('should be light theme', () => {
-     const response: WordpressPage = {
+    const response: WordpressPage = {
       id: 1,
       title: <IRendered>{ rendered: ''},
       content: <IRendered>{ rendered: ''}
@@ -80,7 +80,7 @@ describe('SummaryComponent', () => {
   });
 
   it('should be dark theme', () => {
-     const response: WordpressPage = {
+    const response: WordpressPage = {
       id: 1,
       title: <IRendered>{ rendered: ''},
       content: <IRendered>{ rendered: ''}

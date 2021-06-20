@@ -32,7 +32,7 @@ describe('AboutComponent', () => {
   });
 
   it('should create', () => {
-     const response: WordpressPage = {
+    const response: WordpressPage = {
       id: 1,
       title: <IRendered>{ rendered: ''},
       content: <IRendered>{ rendered: ''}
@@ -43,7 +43,7 @@ describe('AboutComponent', () => {
   });
 
   it('should get title and content', () => {
-     const response: WordpressPage = {
+    const response: WordpressPage = {
       id: 1,
       title: <IRendered>{ rendered: 'About'},
       content: <IRendered>{ rendered: '<div>content</div>'}
@@ -56,7 +56,7 @@ describe('AboutComponent', () => {
 
   it('should work sanitizeHtml pipe', () => {
     const html = '<div>test<script>alert(1);</script></div>';
-     const response: WordpressPage = {
+    const response: WordpressPage = {
       id: 1,
       title: <IRendered>{ rendered: 'About'},
       content: <IRendered>{ rendered: html}
