@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { of } from 'rxjs';
 import { WordpressApiService } from './wordpress-api.service';
-import { WordpressPage } from './wordpress-page.model';
+import { WordpressPageMin } from './wordpress-page.model';
 
 describe('WordpressApiService', () => {
   let wordPressService: WordpressApiService;
@@ -27,7 +27,7 @@ describe('WordpressApiService', () => {
   });
 
   it('should return expected wp page', () => {
-    const response: WordpressPage[] = [{
+    const response: WordpressPageMin[] = [{
       id: 0,
       title: {
         rendered: "title 01"

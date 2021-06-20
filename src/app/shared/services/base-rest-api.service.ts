@@ -5,20 +5,14 @@ import { HttpClient } from '@angular/common/http';
 
 export abstract class BaseRestApiService {
   private httpClient: HttpClient;
+
   constructor(http: HttpClient) {
     this.httpClient = http;
   }
 
   public get<T>(url: string, options?: object, raw = false): Observable<T> {
     return this.httpClient.get<T>(url, options).pipe(map((response: any) => {
-      let body: any;
-      let original: any;
-      if (!raw) {
-        body = response;
-      } else {
-        original = response;
-      }
-      return <T> body || <T> response || original;
+      return <T> response;
     }));
   }
 
