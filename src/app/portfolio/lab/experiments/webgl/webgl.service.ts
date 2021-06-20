@@ -131,7 +131,7 @@ export class WebglService {
 
   public prepareRender() {
     this.setNormalMatrix();
-    
+
     // position
     {
       const numComponents = 3;

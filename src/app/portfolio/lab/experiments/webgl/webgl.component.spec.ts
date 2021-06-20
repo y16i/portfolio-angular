@@ -10,7 +10,7 @@ describe('WebglComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ WebglComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

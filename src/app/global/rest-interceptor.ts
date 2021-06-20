@@ -22,21 +22,21 @@ export class RestInterceptor implements HttpInterceptor {
       return throwError(errorResponse);
     }
     switch (errorResponse.status) {
-      // Bad Request
-      case 400:
+    // Bad Request
+    case 400:
       // Unauthorized
-      case 401:
+    case 401:
       // Forbidden
-      case 403:
+    case 403:
       // Not Found
-      case 404:
+    case 404:
       // Conflict
-      case 409:
+    case 409:
       // Internal Server Error
-      case 500:
+    case 500:
       // Unavailable
-      case 503:
-        return EMPTY;
+    case 503:
+      return EMPTY;
     }
     return throwError(errorResponse);
   }

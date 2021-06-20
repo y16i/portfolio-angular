@@ -40,11 +40,11 @@ export class WebglComponent implements OnInit, AfterViewInit, OnDestroy {
     const increment = this.fps60 * ms;
     this.deltaTime = increment;
     interval(this.fps60)
-    .pipe(takeUntil(this.ngUnSubscribe))
-    .subscribe(() => {
-      this.draw();
-      this.deltaTime += increment;
-    });
+      .pipe(takeUntil(this.ngUnSubscribe))
+      .subscribe(() => {
+        this.draw();
+        this.deltaTime += increment;
+      });
   }
 
   private draw() {
