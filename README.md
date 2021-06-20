@@ -26,10 +26,7 @@ or
 npm run build --env=production
 
 ## CI
-Bitbucket pipeline: Inactive
-CircleCI: Active
-
-git push -> bitbucket -> CircleCI: Lint/Test/Build
+CircleCI
 
 ## apache2 config sample
 ```bash
