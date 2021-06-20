@@ -54,8 +54,8 @@ workflows:
             - test
           filters:
             branches:
-              only: master
+              ignore: /.*/
             tags:
-              only: /v\d+\.\d+\.\d+/
+              only: /^v\d+\.\d+\.\d+/
 orbs:
   aws-s3: circleci/aws-s3@2.0.0
