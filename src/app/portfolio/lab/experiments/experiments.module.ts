@@ -13,7 +13,6 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import { WorkHistoryComponent } from './work-history/work-history.component';
 import { GoBackendComponent } from './go-backend/go-backend.component';
 import { CodeLinkComponent } from './code-link/code-link.component';
-import { WebglComponent } from './webgl/webgl.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +24,6 @@ import { WebglComponent } from './webgl/webgl.component';
     WorkHistoryComponent,
     GoBackendComponent,
     CodeLinkComponent,
-    WebglComponent,
   ],
   imports: [
     CommonModule,

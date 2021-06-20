@@ -4,7 +4,6 @@ import { ArchitectureComponent } from './architecture/architecture.component';
 import { ChartLibrariesComponent } from './chart-libraries/chart-libraries.component';
 import { ExperimentsComponent } from './experiments.component';
 import { GoBackendComponent } from './go-backend/go-backend.component';
-import { WebglComponent } from './webgl/webgl.component';
 import { WorkHistoryComponent } from './work-history/work-history.component';
 
 const routes: Routes = [
@@ -27,10 +26,6 @@ const routes: Routes = [
       {
         path: 'work-history',
         component: WorkHistoryComponent
-      },
-      {
-        path: 'webgl',
-        component: WebglComponent
       },
     ]
   }
