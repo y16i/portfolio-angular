@@ -32,22 +32,22 @@ describe('AboutComponent', () => {
   });
 
   it('should create', () => {
-    const response = new WordpressPage({
+     const response: WordpressPage = {
       id: 1,
       title: <IRendered>{ rendered: ''},
       content: <IRendered>{ rendered: ''}
-    });
+    };
     wordpressApiService.getPage.and.returnValue(of([response]));
     fixture.detectChanges();
     expect(component).toBeTruthy();
   });
 
   it('should get title and content', () => {
-    const response = new WordpressPage({
+     const response: WordpressPage = {
       id: 1,
       title: <IRendered>{ rendered: 'About'},
       content: <IRendered>{ rendered: '<div>content</div>'}
-    });
+    };
     wordpressApiService.getPage.and.returnValue(of([response]));
     fixture.detectChanges();
     expect(component.title).toEqual('About');
@@ -56,11 +56,11 @@ describe('AboutComponent', () => {
 
   it('should work sanitizeHtml pipe', () => {
     const html = '<div>test<script>alert(1);</script></div>';
-    const response = new WordpressPage({
+     const response: WordpressPage = {
       id: 1,
       title: <IRendered>{ rendered: 'About'},
       content: <IRendered>{ rendered: html}
-    });
+    };
     wordpressApiService.getPage.and.returnValue(of([response]));
     const element = fixture.nativeElement;
     const nameDisplay: HTMLElement = element.querySelector('.content');

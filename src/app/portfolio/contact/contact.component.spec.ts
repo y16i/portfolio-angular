@@ -32,22 +32,22 @@ describe('ContactComponent', () => {
   });
 
   it('should create', () => {
-    const response = new WordpressPage({
+     const response: WordpressPage = {
       id: 1,
       title: <IRendered>{ rendered: ''},
       content: <IRendered>{ rendered: ''}
-    });
+    };
     wordpressApiService.getPage.and.returnValue(of([response]));
     fixture.detectChanges();
     expect(component).toBeTruthy();
   });
 
   it('should get title and content', () => {
-    const response = new WordpressPage({
+     const response: WordpressPage = {
       id: 1,
       title: <IRendered>{ rendered: 'Contact'},
       content: <IRendered>{ rendered: '<div>content</div>'}
-    });
+    };
     wordpressApiService.getPage.and.returnValue(of([response]));
     fixture.detectChanges();
     expect(component.title).toEqual('Contact');
