@@ -49,7 +49,7 @@ workflows:
   test_and_deploy:
     jobs:
       - test
-      - build:
+      - deploy:
           requires:
             - test
           filters:
