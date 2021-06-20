@@ -21,10 +21,6 @@ jobs:
           name: Unit Tests
           command: npm run test
   build:
-    filters:
-      branches:
-        only:
-          - master
     docker:
       - image: circleci/node:lts-buster-browsers-legacy
     steps:
@@ -53,6 +49,10 @@ workflows:
   test_and_build:
     jobs:
       - test
-      - build
+      - build:
+          filters:
+            branches:
+              only:
+                - master
 orbs:
   aws-s3: circleci/aws-s3@2.0.0
