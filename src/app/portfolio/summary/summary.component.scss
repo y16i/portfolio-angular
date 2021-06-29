@@ -1,4 +1,4 @@
-@import '~@angular/material/theming';
+@use '~@angular/material' as mat;
 
 #summary {
   height: 100vh;
@@ -33,12 +33,12 @@
         flex-direction: column;
         align-items: center;
         .name {
-          color: mat-color($mat-grey, 50);
+          color: mat.get-color-from-palette(mat.$grey-palette, 50);
           font-size: 18px;
           line-height: 25px;
         }
         .category {
-          color: mat-color($mat-grey, 50);
+          color: mat.get-color-from-palette(mat.$grey-palette, 50);
           font-size: 42px;
           line-height: 42px;
         }
@@ -47,10 +47,10 @@
         height: 2px;
         width: 100%;
         border: none;
-        background-color: mat-color($mat-red, 900);
+        background-color: mat.get-color-from-palette(mat.$red-palette, 900);
       }
       .title {
-        color: mat-color($mat-grey, 50);
+        color: mat.get-color-from-palette(mat.$grey-palette, 50);
         font-size: 21px;
         line-height: 21px;
       }
